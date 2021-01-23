@@ -1,6 +1,7 @@
 export * from './assert';
 export * from './common';
 export * from './compare-dates';
+export * from './flat';
 export * from './merge';
 export * from './pick-random';
 export * from './weak-unique-id';

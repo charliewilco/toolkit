@@ -32,6 +32,7 @@
   "name": "@charliewilco/toolkit",
   "author": "Charlie ⚡️",
   "module": "dist/toolkit.esm.js",
+  "repository": "git://github.com/charliewilco/toolkit.git",
   "devDependencies": {
     "husky": "^4.2.5",
     "tsdx": "^0.14.1",

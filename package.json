@@ -20,8 +20,6 @@
     "prepare": "yarn build && husky install",
     "prebuild": "rm -rf dist",
     "release": "release",
-    "size": "size-limit",
-    "analyze": "size-limit --why",
     "format": "pretty-quick --staged"
   },
   "peerDependencies": {},
@@ -36,7 +34,6 @@
     "rollup": "^2.75.7",
     "rollup-plugin-dts": "^4.2.2",
     "rollup-plugin-esbuild": "^4.9.1",
-    "size-limit": "^7.0.8",
     "ts-jest": "^28.0.3",
     "tslib": "^2.4.0",
     "typescript": "^4.7.4"
@@ -53,16 +50,6 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "size-limit": [
-    {
-      "path": "dist/toolkit.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/toolkit.esm.js",
-      "limit": "10 KB"
-    }
-  ],
   "jest": {
     "preset": "ts-jest"
   }

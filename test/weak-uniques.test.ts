@@ -1,13 +1,13 @@
 import { describe, expect, it } from '@jest/globals';
-import { createUID } from '../src/weak-unique-id';
+import { createWeakUID } from '../src/weak-unique-id';
 
 describe('Unique ID', () => {
   it('is different', () => {
-    expect(createUID()).not.toEqual(createUID());
+    expect(createWeakUID()).not.toEqual(createWeakUID());
   });
 
   it('maintains character', () => {
-    expect(createUID().length).toEqual(36);
-    expect(createUID().split('-').length).toEqual(5);
+    expect(createWeakUID().length).toEqual(36);
+    expect(createWeakUID().split('-').length).toEqual(5);
   });
 });

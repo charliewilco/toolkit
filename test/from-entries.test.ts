@@ -1,3 +1,4 @@
+import { describe, expect, it } from '@jest/globals';
 import { fromEntries, fromEntriesReduced } from '../src/from-entries';
 
 describe('fromEntries', () => {

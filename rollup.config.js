@@ -1,33 +1,34 @@
-import dts from 'rollup-plugin-dts';
-import esbuild from 'rollup-plugin-esbuild';
+// @ts-check
 
-const bundle = (config) => ({
-  ...config,
-  input: 'src/index.ts',
-  external: (id) => !/^[./]/.test(id),
-});
+import dts from "rollup-plugin-dts";
+import esbuild from "rollup-plugin-esbuild";
+import { defineConfig } from "rollup";
 
-export default [
-  bundle({
-    plugins: [esbuild()],
+export default defineConfig([
+  {
+    input: "src/index.ts",
+    external: (id) => !/^[./]/.test(id),
     output: [
       {
-        file: 'dist/toolkit.cjs.js',
-        format: 'cjs',
+        file: "dist/index.cjs.js",
+        format: "cjs",
         sourcemap: true,
       },
       {
-        file: 'dist/toolkit.esm.js',
-        format: 'es',
+        file: "dist/index.esm.js",
+        format: "es",
         sourcemap: true,
       },
     ],
-  }),
-  bundle({
-    plugins: [dts()],
+    plugins: [esbuild()],
+  },
+  {
+    input: "src/index.ts",
+    external: (id) => !/^[./]/.test(id),
     output: {
-      file: 'dist/toolkit.d.ts',
-      format: 'es',
+      file: "dist/index.d.ts",
+      format: "es",
     },
-  }),
-];
+    plugins: [dts()],
+  },
+]);

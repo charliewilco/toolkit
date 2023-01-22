@@ -1,5 +1,5 @@
 {
-  "version": "0.3.2",
+  "version": "0.4.0",
   "license": "MIT",
   "name": "@charliewilco/toolkit",
   "author": "Charlie ⚡️",
@@ -52,7 +52,10 @@
     "clean": true,
     "dts": true,
     "splitting": true,
-    "format": ["esm", "cjs"]
+    "format": [
+      "esm",
+      "cjs"
+    ]
   },
   "jest": {
     "preset": "ts-jest/presets/default-esm",

@@ -15,13 +15,13 @@
     "node": ">=18"
   },
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
+    "build": "tsup src/index.ts",
+    "dev": "tsup src/index.ts --watch",
     "bundle": "tsc",
     "types": "tsc --noEmit --pretty",
     "test": "jest",
-    "prepare": "yarn build && husky install",
     "prebuild": "rm -rf dist",
+    "prerelease": "npm run build",
     "release": "release",
     "format": "pretty-quick --staged"
   },
@@ -35,7 +35,7 @@
     "ts-jest": "^29.0.5",
     "tslib": "^2.4.0",
     "tsup": "^6.5.0",
-    "typescript": "^4.7.4"
+    "typescript": "^4.9.4"
   },
   "husky": {
     "hooks": {
@@ -48,5 +48,17 @@
     "semi": true,
     "singleQuote": true,
     "trailingComma": "es5"
+  },
+  "tsup": {
+    "sourcemap": true,
+    "clean": true,
+    "dts": true,
+    "splitting": true,
+    "format": ["esm", "cjs"]
+  },
+  "jest": {
+    "preset": "ts-jest/presets/default-esm",
+    "testEnvironment": "node",
+    "verbose": true
   }
 }

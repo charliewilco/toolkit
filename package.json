@@ -3,10 +3,11 @@
   "license": "MIT",
   "name": "@charliewilco/toolkit",
   "author": "Charlie ⚡️",
-  "module": "dist/index.js",
+  "module": "dist/index.mjs",
   "repository": "charliewilco/toolkit",
-  "main": "dist/index.cjs",
+  "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "sideEffect": false,
   "files": [
     "dist",
     "src"

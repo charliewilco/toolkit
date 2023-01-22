@@ -11,9 +11,6 @@
     "dist",
     "src"
   ],
-  "engines": {
-    "node": ">=18"
-  },
   "scripts": {
     "build": "tsup src/index.ts",
     "dev": "tsup src/index.ts --watch",

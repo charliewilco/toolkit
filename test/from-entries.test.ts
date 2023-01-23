@@ -1,11 +1,11 @@
-import { fromEntries, fromEntriesReduced } from '../src/from-entries';
+import { fromEntries, fromEntriesReduced } from "../src/from-entries";
 
-describe('fromEntries', () => {
-	test('basic', () => {
+describe("fromEntries", () => {
+	test("basic", () => {
 		const map = new Map([
-			['a', 1],
-			['b', 2],
-			['c', 3],
+			["a", 1],
+			["b", 2],
+			["c", 3],
 		]);
 		const o = fromEntries(map);
 
@@ -14,11 +14,11 @@ describe('fromEntries', () => {
 		expect(o.c).toBe(3);
 	});
 
-	test('reducer', () => {
+	test("reducer", () => {
 		const map = new Map([
-			['a', 1],
-			['b', 2],
-			['c', 3],
+			["a", 1],
+			["b", 2],
+			["c", 3],
 		]);
 		const o = fromEntriesReduced(map);
 

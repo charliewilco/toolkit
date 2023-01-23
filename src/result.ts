@@ -1,4 +1,6 @@
-export type Result<T, E = string> = { data: T; ok: true } | { error: E; ok: false };
+export type Result<T, E = string> =
+	| { data: T; ok: true }
+	| { error: E; ok: false };
 
 export function unwrap<T, E extends string>(
 	result: Result<T, E>,

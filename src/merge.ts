@@ -1,4 +1,4 @@
-import { isObject } from './assert';
+import { isObject } from "./assert";
 
 /*
  * This function was written by OpenAI, with the guidance and supervision of a developer.

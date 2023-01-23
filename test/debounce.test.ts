@@ -1,8 +1,8 @@
-import { debounce } from '../src/debounce';
+import { debounce } from "../src/debounce";
 
 jest.useFakeTimers();
 
-describe('debounce function', () => {
+describe("debounce function", () => {
 	let func: jest.Mock;
 	let debouncedFunc: (...args: any[]) => any;
 
@@ -11,7 +11,7 @@ describe('debounce function', () => {
 		debouncedFunc = debounce(func, 100);
 	});
 
-	test('should call the debounced function only once within the wait time', () => {
+	test("should call the debounced function only once within the wait time", () => {
 		debouncedFunc();
 		debouncedFunc();
 		debouncedFunc();
@@ -22,21 +22,21 @@ describe('debounce function', () => {
 		expect(func).toHaveBeenCalledTimes(1);
 	});
 
-	test('should call the debounced function with the correct arguments', () => {
+	test("should call the debounced function with the correct arguments", () => {
 		const args = [1, 2, 3];
 		debouncedFunc(...args);
 		jest.advanceTimersByTime(100);
 		expect(func).toHaveBeenCalledWith(...args);
 	});
 
-	test('should call the debounced function with the correct context', () => {
+	test("should call the debounced function with the correct context", () => {
 		const context = {};
 		debouncedFunc.call(context);
 		jest.advanceTimersByTime(100);
 		expect(func.mock.instances[0]).toBe(context);
 	});
 
-	test('should call the debounced function again if called after wait time', () => {
+	test("should call the debounced function again if called after wait time", () => {
 		debouncedFunc();
 		jest.advanceTimersByTime(100);
 		debouncedFunc();

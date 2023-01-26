@@ -19,15 +19,19 @@ export function isEmpty(value: unknown): boolean {
 	}
 
 	if (typeof value === "string") {
+		if (value.trim() === "") {
+			return true;
+		}
+
 		return value.replace(/\s/g, "") !== "";
 	}
 
-	return value !== null && value !== undefined;
+	return value !== null || value !== undefined;
 }
 
 export function isIterable(value: any): boolean {
-	if (typeof Symbol === "undefined") {
+	if (value === null) {
 		return false;
 	}
-	return value[Symbol.iterator];
+	return typeof value[Symbol.iterator] === "function";
 }

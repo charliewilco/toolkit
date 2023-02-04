@@ -3,3 +3,7 @@
 node_modules
 dist
 coverage
+/*.js
+/*.mjs
+/*.d.ts
+/*.*.map

@@ -6,7 +6,7 @@ type ThrottleOptions = {
 	logging?: boolean;
 };
 
-export function throttle<T extends (...args: any[]) => any>(
+export function unstable_throttle<T extends (...args: any[]) => any>(
 	fn: T,
 	options: ThrottleOptions = {}
 ): T {

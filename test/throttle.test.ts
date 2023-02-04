@@ -1,4 +1,4 @@
-import { throttle } from "../src/throttle";
+import { unstable_throttle } from "../src/throttle";
 
 describe("throttle function", () => {
 	let callback: jest.Mock;
@@ -7,7 +7,7 @@ describe("throttle function", () => {
 	beforeEach(() => {
 		jest.useFakeTimers();
 		callback = jest.fn();
-		throttledCallback = throttle(callback);
+		throttledCallback = unstable_throttle(callback);
 	});
 
 	afterEach(() => {
@@ -16,13 +16,16 @@ describe("throttle function", () => {
 	});
 
 	test("should call the callback function immediately when leading is true", () => {
-		throttledCallback = throttle(callback, { leading: true });
+		throttledCallback = unstable_throttle(callback, { leading: true });
 		throttledCallback();
 		expect(callback).toHaveBeenCalled();
 	});
 
 	test("should call the callback function after the interval when leading is false", () => {
-		throttledCallback = throttle(callback, { leading: false, interval: 1000 });
+		throttledCallback = unstable_throttle(callback, {
+			leading: false,
+			interval: 1000,
+		});
 		throttledCallback();
 		jest.advanceTimersByTime(999);
 		expect(callback).not.toHaveBeenCalled();
@@ -31,7 +34,7 @@ describe("throttle function", () => {
 	});
 
 	test.skip("should call the callback function at most maxCalls times", () => {
-		throttledCallback = throttle(callback, { maxCalls: 2 });
+		throttledCallback = unstable_throttle(callback, { maxCalls: 2 });
 		throttledCallback();
 		throttledCallback();
 		throttledCallback();
@@ -39,7 +42,10 @@ describe("throttle function", () => {
 	});
 
 	test("should call the callback function on the trailing edge when trailing is true", () => {
-		throttledCallback = throttle(callback, { trailing: true, interval: 1000 });
+		throttledCallback = unstable_throttle(callback, {
+			trailing: true,
+			interval: 1000,
+		});
 		throttledCallback();
 		jest.advanceTimersByTime(999);
 		throttledCallback();
@@ -48,7 +54,10 @@ describe("throttle function", () => {
 	});
 
 	test.skip("should not call the callback function on the trailing edge when trailing is false", () => {
-		throttledCallback = throttle(callback, { trailing: false, interval: 1000 });
+		throttledCallback = unstable_throttle(callback, {
+			trailing: false,
+			interval: 1000,
+		});
 		throttledCallback();
 		jest.advanceTimersByTime(999);
 		throttledCallback();

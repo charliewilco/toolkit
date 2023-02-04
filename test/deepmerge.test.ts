@@ -1,4 +1,4 @@
-import { deepMerge } from "../src";
+import { deepMerge } from "../src/deep-merge";
 
 describe("deepMerge", () => {
 	test("should merge two simple objects", () => {

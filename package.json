@@ -1,6 +1,6 @@
 {
 	"version": "0.5.0",
-	"license": "MIT",
+	"license": "Unlicense",
 	"name": "@charliewilco/toolkit",
 	"author": "Charlie ⚡️ <charliewilc0@pm.me>",
 	"module": "./index.mjs",
@@ -15,11 +15,12 @@
 		"./*.map"
 	],
 	"scripts": {
+		"postinstall": "npx husky install",
+		"prebuild": "npm run clean",
 		"build": "tsup src/*.ts",
 		"postbuild": "node scripts/move-output.mjs",
 		"dev": "tsup src/*.ts --watch",
 		"test": "jest",
-		"prebuild": "npm run clean",
 		"format": "pretty-quick --staged",
 		"clean": "node scripts/clean.mjs"
 	},

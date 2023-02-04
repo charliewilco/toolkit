@@ -2,7 +2,7 @@ export function each<T extends object>(
 	obj: T,
 	cb: (value: T[keyof T], key: keyof T) => void
 ): void {
-	for (const key in obj) {
+	for (let key in obj) {
 		if (has(obj, key)) {
 			cb(obj[key], key);
 		}
@@ -28,6 +28,6 @@ export function isPlainObject(value: unknown): value is object {
 	if (typeof value !== "object" || value === null) {
 		return false;
 	}
-	const proto = Object.getPrototypeOf(value);
+	let proto = Object.getPrototypeOf(value);
 	return proto === Object.prototype || proto === null;
 }

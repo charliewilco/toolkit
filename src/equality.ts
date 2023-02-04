@@ -4,7 +4,7 @@ export function isShallowEqual<T>(a: T, b: T): boolean {
 	if (typeof a !== typeof b) return false;
 	if (typeof a === "object") {
 		if (Object.keys(a).length !== Object.keys(b).length) return false;
-		for (const key in a) {
+		for (let key in a) {
 			if (a[key] !== b[key]) return false;
 		}
 		return true;
@@ -19,7 +19,7 @@ export function isDeepEqual<T>(a: T, b: T): boolean {
 	if (typeof a === "object") {
 		if (Array.isArray(a) !== Array.isArray(b)) return false;
 		if (Object.keys(a).length !== Object.keys(b).length) return false;
-		for (const key in a) {
+		for (let key in a) {
 			if (!isDeepEqual(a[key], b[key])) return false;
 		}
 		return true;

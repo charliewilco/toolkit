@@ -5,15 +5,15 @@ import chalk from "chalk";
 import arg from "arg";
 import path from "node:path";
 
-const buildOuputPaths = ["./dist", "./*.js", "./*.d.ts", "./*.mjs", "./*.map"];
+let buildOuputPaths = ["./dist", "./*.js", "./*.d.ts", "./*.mjs", "./*.map"];
 
-const args = arg({
+let args = arg({
 	"--dryrun": Boolean,
 	"-d": "--dryrun",
 });
 
 if (!process.env.CI) {
-	const removedPaths = await deleteAsync(buildOuputPaths, {
+	let removedPaths = await deleteAsync(buildOuputPaths, {
 		dryRun: args["--dryrun"],
 	});
 
@@ -23,7 +23,7 @@ if (!process.env.CI) {
 		console.log("Deleted directories:\n");
 	}
 
-	for (const removed of removedPaths) {
+	for (let removed of removedPaths) {
 		console.log("♻️ ", chalk.bold.green(path.relative(process.cwd(), removed)));
 	}
 }

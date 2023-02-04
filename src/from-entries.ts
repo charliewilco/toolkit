@@ -1,10 +1,11 @@
-export const fromEntriesReduced = <K extends string, U>(
+export function fromEntriesReduced<K extends string, U>(
 	iterable: Map<K, U>
-): Record<string, U> =>
-	[...iterable].reduce((obj: Record<string, U>, [key, val]) => {
+): Record<string, U> {
+	return [...iterable].reduce((obj: Record<string, U>, [key, val]) => {
 		obj[key] = val;
 		return obj;
 	}, {});
+}
 
 /**
  * Convert a Map to a keyed object like `Object.fromEntries`
@@ -15,7 +16,7 @@ export const fromEntriesReduced = <K extends string, U>(
 export function fromEntries<K extends string, U>(
 	iterable: Map<K, U>
 ): Record<string, U> {
-	const object: Record<string, U> = {};
+	let object: Record<string, U> = {};
 
 	for (let [key, val] of iterable) {
 		object[key] = val;

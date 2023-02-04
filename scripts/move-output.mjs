@@ -4,7 +4,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import chalk from "chalk";
 
-const files = await fs.readdir("./dist");
+let files = await fs.readdir("./dist");
 
 async function rename(file) {
 	let src = path.join("./dist", file);

@@ -17,7 +17,7 @@ export function deepMerge<T extends object, U extends object>(
 	type CommonKeys<T, U> = {
 		[K in keyof T]: K extends keyof U ? K : never;
 	}[keyof T];
-	for (const key in b) {
+	for (let key in b) {
 		if (
 			key in a &&
 			isObject(b[key as unknown as CommonKeys<U, T>]) &&

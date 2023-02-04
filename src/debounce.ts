@@ -1,7 +1,13 @@
-export function debounce<F extends (...args: any[]) => any>(
-	func: F,
+/**
+ * 
+ * @param func 
+ * @param wait 
+ * @returns 
+ */
+export function debounce<Func extends (...args: any[]) => any>(
+	func: Func,
 	wait: number
-): F {
+): Func {
 	let timeout: number | undefined;
 	return function (this: any, ...args: any[]) {
 		const context = this;
@@ -11,5 +17,5 @@ export function debounce<F extends (...args: any[]) => any>(
 		};
 		clearTimeout(timeout);
 		timeout = setTimeout(later, wait) as any;
-	} as F;
+	} as Func;
 }

@@ -5,5 +5,5 @@ A collection of strongly-typed utilities.
 ## Install
 
 ```
-npm install @charliewilco/toolkit
+yarn add @charliewilco/toolkit
 ```

@@ -8,7 +8,12 @@
 	"main": "./index.js",
 	"typings": "./index.d.ts",
 	"sideEffect": false,
-	"files": ["./*.d.ts", "./*.js", "./*.mjs", "./*.map"],
+	"files": [
+		"./*.d.ts",
+		"./*.js",
+		"./*.mjs",
+		"./*.map"
+	],
 	"scripts": {
 		"prebuild": "pnpm clean",
 		"build": "tsup src/*.ts",
@@ -36,13 +41,17 @@
 		"clean": true,
 		"dts": true,
 		"splitting": true,
-		"format": ["esm", "cjs"]
+		"format": [
+			"esm",
+			"cjs"
+		]
 	},
 	"jest": {
 		"preset": "ts-jest/presets/default-esm",
 		"testEnvironment": "node",
 		"verbose": true
 	},
+	"packageManager": "pnpm@10.11.0",
 	"dependencies": {
 		"lefthook": "^1.11.13",
 		"tslib": "^2.8.1"

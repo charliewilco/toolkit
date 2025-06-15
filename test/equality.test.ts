@@ -1,4 +1,5 @@
-import { isShallowEqual, isDeepEqual } from "../src/equality";
+import { describe, expect, test } from "@jest/globals";
+import { isDeepEqual, isShallowEqual } from "../src/equality";
 
 describe("Equality", () => {
 	test("shallow equality", () => {

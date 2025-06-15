@@ -6,7 +6,7 @@ export function isObject(item: unknown): item is object {
 export function isDate(date: any): boolean;
 export function isDate(date: any): date is Date {
 	// https://stackoverflow.com/questions/10589732/checking-if-a-date-is-valid-in-javascript
-	return date instanceof Date && !isNaN(date.valueOf());
+	return date instanceof Date && !Number.isNaN(date.valueOf());
 }
 
 export function isEmpty(value: unknown): boolean {

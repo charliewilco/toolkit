@@ -1,6 +1,6 @@
 export function each<T extends object>(
 	obj: T,
-	cb: (value: T[keyof T], key: keyof T) => void
+	cb: (value: T[keyof T], key: keyof T) => void,
 ): void {
 	for (let key in obj) {
 		if (has(obj, key)) {

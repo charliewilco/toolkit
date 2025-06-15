@@ -8,14 +8,14 @@ type ThrottleOptions = {
 
 export function unstable_throttle<T extends (...args: any[]) => any>(
 	fn: T,
-	options: ThrottleOptions = {}
+	options: ThrottleOptions = {},
 ): T {
 	let lastCall = 0;
 	let lastExecution = 0;
 	let timer: any = null;
 	let leading = options.leading || false;
 	let trailing = options.trailing !== false;
-	let maxCalls = options.maxCalls || Infinity;
+	let maxCalls = options.maxCalls || Number.POSITIVE_INFINITY;
 	let calls = 0;
 	let interval = options.interval || 0;
 

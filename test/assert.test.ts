@@ -1,3 +1,4 @@
+import { describe, expect, test } from "@jest/globals";
 import { isDate, isEmpty, isIterable, isObject } from "../src/assert";
 
 describe("Type assertions", () => {

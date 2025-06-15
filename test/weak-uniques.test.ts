@@ -1,3 +1,4 @@
+import { describe, expect, test } from "@jest/globals";
 import { createWeakUID } from "../src/weak-unique-id";
 
 describe("Unique ID", () => {

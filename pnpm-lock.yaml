@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      lefthook:
-        specifier: ^1.11.13
-        version: 1.11.13
       tslib:
         specifier: ^2.8.1
         version: 2.8.1
@@ -36,6 +33,9 @@ importers:
       jest:
         specifier: ^30.0.0
         version: 30.0.0(@types/node@24.0.1)
+      lefthook:
+        specifier: ^1.11.13
+        version: 1.11.13
       ts-jest:
         specifier: ^29.4.0
         version: 29.4.0(@babel/core@7.27.4)(@jest/transform@30.0.0)(@jest/types@30.0.0)(babel-jest@30.0.0(@babel/core@7.27.4))(esbuild@0.25.5)(jest-util@30.0.0)(jest@30.0.0(@types/node@24.0.1))(typescript@5.8.3)

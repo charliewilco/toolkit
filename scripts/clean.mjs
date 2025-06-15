@@ -1,11 +1,11 @@
 // @ts-check
 
-import { deleteAsync } from "del";
-import chalk from "chalk";
-import arg from "arg";
 import path from "node:path";
+import arg from "arg";
+import chalk from "chalk";
+import { deleteAsync } from "del";
 
-let buildOuputPaths = ["./dist", "./*.js", "./*.d.ts", "./*.mjs", "./*.map"];
+let buildOuputPaths = ["./dist", "./*.js", "./*.d.ts", "./*.mjs", "./*.map", "./*.d.mts"];
 
 let args = arg({
 	"--dryrun": Boolean,

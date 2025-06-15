@@ -6,10 +6,7 @@ import { isObject } from "./assert";
  * The function also has type safety, and it ensures that only objects are merged, not arrays.
  * It also handles cases where one of the objects passed is null or undefined.
  */
-export function deepMerge<T extends object, U extends object>(
-	a: T,
-	b: U
-): T & U {
+export function deepMerge<T extends object, U extends object>(a: T, b: U): T & U {
 	if (!a) return b as T & U;
 	if (!b) return a as T & U;
 
@@ -25,7 +22,7 @@ export function deepMerge<T extends object, U extends object>(
 		) {
 			merged[key as unknown as CommonKeys<U, T>] = deepMerge<any, any>(
 				a[key as unknown as CommonKeys<U, T>],
-				b[key as unknown as CommonKeys<U, T>]
+				b[key as unknown as CommonKeys<U, T>],
 			);
 		}
 	}

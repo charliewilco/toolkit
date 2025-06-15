@@ -1,3 +1,4 @@
+import { describe, expect, test } from "@jest/globals";
 import { flattenArray } from "../src/flat";
 
 describe("Flatten array", () => {

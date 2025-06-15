@@ -1,4 +1,5 @@
-import { Result, unwrap } from "../src/result";
+import { describe, expect, test } from "@jest/globals";
+import { type Result, unwrap } from "../src/result";
 
 describe("unwrap function", () => {
 	test("should return the data when ok is true", () => {
@@ -15,9 +16,7 @@ describe("unwrap function", () => {
 	test("should throw an error with a custom message when ok is false and a custom error message is provided", () => {
 		const result: Result<never> = { error: "An error occurred", ok: false };
 		const customErrorMessage = "Custom error message";
-		expect(() => unwrap(result, customErrorMessage)).toThrow(
-			customErrorMessage
-		);
+		expect(() => unwrap(result, customErrorMessage)).toThrow(customErrorMessage);
 	});
 
 	test("should throw an error with the result error message when ok is false and a custom error message is not provided", () => {

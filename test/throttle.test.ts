@@ -1,3 +1,4 @@
+import { afterEach, beforeEach, describe, expect, jest, test } from "@jest/globals";
 import { unstable_throttle } from "../src/throttle";
 
 describe("throttle function", () => {

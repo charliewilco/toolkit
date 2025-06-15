@@ -1,6 +1,4 @@
-export function fromEntriesReduced<K extends string, U>(
-	iterable: Map<K, U>
-): Record<string, U> {
+export function fromEntriesReduced<K extends string, U>(iterable: Map<K, U>): Record<string, U> {
 	return [...iterable].reduce((obj: Record<string, U>, [key, val]) => {
 		obj[key] = val;
 		return obj;
@@ -13,9 +11,7 @@ export function fromEntriesReduced<K extends string, U>(
  * Based on [`fromEntries()` ponyfill](https://github.com/feross/fromentries).
  * @param iterable
  */
-export function fromEntries<K extends string, U>(
-	iterable: Map<K, U>
-): Record<string, U> {
+export function fromEntries<K extends string, U>(iterable: Map<K, U>): Record<string, U> {
 	let object: Record<string, U> = {};
 
 	for (let [key, val] of iterable) {
